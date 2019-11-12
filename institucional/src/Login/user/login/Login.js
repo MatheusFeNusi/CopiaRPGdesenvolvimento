@@ -3,9 +3,6 @@ import './Login.css';
 import { GOOGLE_AUTH_URL, FACEBOOK_AUTH_URL, GITHUB_AUTH_URL, ACCESS_TOKEN } from '../../constants';
 import { login } from '../../util/APIUtils';
 import { Link, Redirect } from 'react-router-dom'
-import fbLogo from '../../img/fb-logo.png';
-import googleLogo from '../../img/google-logo.png';
-import githubLogo from '../../img/github-logo.png';
 import Alert from 'react-s-alert';
 import { urlPadrao } from "../../services/api";
 
@@ -81,12 +78,12 @@ export default class LoginForm extends Component {
 
 
         urlPadrao.post(
-            "login", { email, senha }).then(res=>{
-                if(res.status==200){
+            "login", { email, senha }).then(res => {
+                if (res.status == 200) {
                     alert("sucesso")
                 }
-                
-            }                
+
+            }
             ).catch(err => console.error(err))
     }
 
@@ -129,7 +126,7 @@ export default class LoginForm extends Component {
                         onChange={this.handleInputChange} required />
                 </div>
                 <div className="form-item">
-                    <button onClick={this.logar} type="button"  className="btn btn-block btn-primary">Login</button>
+                    <button onClick={this.logar} type="button" className="btn btn-block btn-primary">Login</button>
                 </div>
             </form>
         );
