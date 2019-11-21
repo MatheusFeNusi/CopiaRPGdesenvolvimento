@@ -8,8 +8,14 @@ import googleLogo from '../../img/google-logo.png';
 import githubLogo from '../../img/github-logo.png';
 import Alert from 'react-s-alert';
 import { urlPadrao } from "../../services/api";
+import AppHeader from '../../common/AppHeader'
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Col';
+import Logo from '../../../meu-template/images/logos/logo.svg'
 
 
+import ImagemCadastro from '../../img/imagemCadastro.jpg'
 export default class Signup extends Component {
 
     constructor(props) {
@@ -73,34 +79,49 @@ export default class Signup extends Component {
 
     render() {
         console.log(this.state);
+        
         return (
+          
+            < div className="post-content" style={{backgroundImage: `url(${ImagemCadastro})`,backgroundSize: 'cover', backgroundRepeat:'no-repeat'}}>
+            <div className="app">
+        <div className="app-top-box">
+          <AppHeader  />
+        </div>
+        </div>
+        
 
-            < form >
+        <Col md={4} style={{ top: '25px', backgroundColor: 'rgba(0, 0, 0, 0.48)', borderColor: 'black', borderStyle: 'solid', left: '450px'}}>
+        <div><img  src={Logo} style={{backgroundSize: 'cover'}}/> <strong style={{color: 'rgba(250, 255, 0, 1)', fontFamily: 'Rubik', fontSize: '15px'}}>CADASTRE E DIVIRTA-SE</strong></div>
+        <div className="app-body"></div>
                 <div className="form-item">
-                    <input type="email" id="email" name="email"
-                        className="form-control" placeholder="email"
+                    <input type="email" id="email" name="email" style={{height: '40px', backgroundColor: 'transparent', borderColor: 'yellow', color: 'white'}}
+                        className="form-control" placeholder="email" data-toggle="tooltip"  title="Digite seu email"
                         onChange={this.handleInputChange} required />
                 </div>
                 <div className="form-item">
-                    <input type="password" id="senha" name="senha"
-                        className="form-control" placeholder="senha"
+                    <input type="password" id="senha" name="senha" data-toggle="tooltip"  title="Digite sua senha"
+                        className="form-control" placeholder="senha" style={{height: '40px', backgroundColor: 'transparent', borderColor: 'yellow', color: 'white'}}
                         onChange={this.handleInputChange} required />
                 </div>
                 <div className="form-item">
-                    <input type="text" id="nome" name="nome"
-                        className="form-control" placeholder="nome"
+                    <input type="text" id="nome" name="nome" style={{height: '40px', backgroundColor: 'transparent', borderColor: 'yellow', color: 'white'}}
+                        className="form-control" placeholder="nome" data-toggle="tooltip"  title="Digite seu nome"
                         onChange={this.handleInputChange} required />
                 </div>
                 <div className="form-item">
-                    <input type="text" id="idade" name="idade"
-                        className="form-control" placeholder="idade"
+                    <input type="text" id="idade" name="idade" style={{height: '40px',  backgroundColor: 'transparent', borderColor: 'yellow', color: 'white'}}
+                        className="form-control" placeholder="idade" data-toggle="tooltip"  title="Digite sua data nascimento"
                         onChange={this.handleInputChange} required />
                 </div>
 
                 <div className="form-item">
-                    <button onClick={this.cadastrar} type="button" className="btn btn-block btn-primary">Login</button>
+                    <button onClick={this.cadastrar} type="button" className="btn btn-block btn-primary">Cadastrar-se</button>
                 </div>
-            </form >
+                <br />
+                    </Col>
+                <br />
+                <br />
+            </ div >
         );
     }
 }
