@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 import './meu-template/style.css';
 import './meu-template/css/bootstrap.min.css';
 import './meu-template/css/versions.css';
@@ -22,8 +20,8 @@ import './meu-template/fonts/flaticon.css';
 import 'primereact/resources/themes/nova-light/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
-
 import Routes from './Routes.js';
+
 export default class App extends Component {
 
     render() {
